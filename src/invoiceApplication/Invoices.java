@@ -53,16 +53,16 @@ public class Invoices {
 		System.out.println("The list of items you purchased is below: ");
 
 		for(Products item : itemsToPurchase) {
-			System.out.println(item.getName() + " " + item.getPrice());
+			System.out.println(item.getName() + " $" + item.getPrice());
 			subtotal += item.getPrice(); 
 		}
 
-		taxCharged = subtotal * taxRate; 
+		taxCharged = subtotal * (taxRate/100); 
 		totalAmt = subtotal + taxCharged;
 
-		System.out.println("Tax Rate: " + taxRate);
-		System.out.println("Tax Charged: " + taxCharged);
-		System.out.println("Total Amount Due: " + totalAmt);
+		System.out.println("Tax Rate: " + taxRate + "%");
+		System.out.println("Tax Charged: $" + taxCharged);
+		System.out.println("Total Amount Due: $" + totalAmt);
 
 	scan.close();
 	}
